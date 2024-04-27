@@ -1,0 +1,17 @@
+#container{
+    border: 4px solid cadetblue;
+    outline: 10px solid rgb(253, 57, 57);
+    max-width: 500px;
+    aspect-ratio: 1;
+    border-radius: 25px;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgb(255, 255, 255),
+        rgb(255, 255, 255) 15px,
+        rgb(255, 218, 176) 15px,
+        rgb(255, 218, 176) 25px,
+    );
+    img{
+        height: 400px;
+    }
+}
