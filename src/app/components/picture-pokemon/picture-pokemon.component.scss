@@ -12,6 +12,7 @@
         rgb(255, 218, 176) 25px,
     );
     img{
-        height: 400px;
+        width: 100%;
+        image-rendering: pixelated;
     }
 }

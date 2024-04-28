@@ -4,6 +4,7 @@ import { CardPokemonComponent } from '../../components/card-pokemon/card-pokemon
 import { PicturePokemonComponent } from '../../components/picture-pokemon/picture-pokemon.component';
 import { PokemonsService } from '../../services/pokemons.service';
 import { Result } from '../../Interfaces/pokeapi';
+import { Pokemon } from '../../Interfaces/pokemon';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit{
   pokemonList: Result[] = []
   page:number = 1;
   loading:boolean = false;
+  selectedPokemon?:Pokemon;
 
   ngOnInit(): void {
     this.loadList();
@@ -41,5 +43,9 @@ export class HomeComponent implements OnInit{
       === e.srcElement.scrollHeight){
         this.loadList()
       }
+  }
+
+  async cardClicked(id:string){
+    this.selectedPokemon = await this.pokemonService.getById(id);
   }
 }
