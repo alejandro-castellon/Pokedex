@@ -1,1 +1,24 @@
-<p>detailed-pokemon works!</p>
+<div id="backdrop" [ngClass]="{hidden: !open}" (click)="clicked.emit()"></div>
+<div id="container">
+    <div id="data">
+        <div class="area">
+            <app-card-pokemon
+            [fullData]="pokemon"></app-card-pokemon>
+        </div>
+        <div class="area">
+            <p><span class="property">Type</span><span class="type" *ngFor="let type of pokemon?.types">{{type.type.name}}</span></p>
+            <p><span class="property">Height</span>{{pokemon?.height}} in.</p>
+            <p><span class="property">Weight</span>{{pokemon?.weight}} lbs.</p>
+        </div>
+        <div class="area">
+            <div id="descriptionContainer">
+                <div></div>
+                <p>{{description}}</p>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <button (click)="clicked.emit()">
+        <img src="./../../../assets/img/arrow.png" alt="" [ngClass]="{turn: open}">
+    </button>
+</div>

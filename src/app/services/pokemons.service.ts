@@ -23,7 +23,10 @@ export class PokemonsService {
     return await res.json();;
   }
 
-  getDescription(){
-    
+  async getDescription(id:string | number):Promise<string>{
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+    const resJson = await res.json();
+    const text = resJson.flavor_text_entries.find((text:any) =>  text.language.name === "en")
+    return text.flavor_text;
   }
 }
