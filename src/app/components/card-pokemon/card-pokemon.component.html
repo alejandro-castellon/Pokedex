@@ -2,8 +2,8 @@
     <img src="./../../../assets/img/arrow.png" alt="" id="arrow">
     <div id="card">
         <div id="circle"></div>
-        <img src="./../../../assets/img/not-found.png" alt="">
-        <span>No. 001</span>
-        <span>Pikachu</span>
+        <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png' alt="">
+        <span>No. {{id}}</span>
+        <span *ngIf="data">{{data.name}}</span>
     </div>
 </div>
