@@ -3,7 +3,8 @@
     <div id="data">
         <div class="area">
             <app-card-pokemon
-            [fullData]="pokemon"></app-card-pokemon>
+            [fullData]="pokemon"
+            [selected]="true"></app-card-pokemon>
         </div>
         <div class="area">
             <p><span class="property">Type</span><span class="type" *ngFor="let type of pokemon?.types">{{type.type.name}}</span></p>
